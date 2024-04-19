@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> a có chia hết cho b hay không?</h2> <br>
+<input type="number" id="a" placeholder="Nhập a">
+<input type="number" id="b" placeholder="Nhập b">
+<button onclick="kt1()"> Kiểm tra </button> <br>
+<p id="chiahet"></p>
+<hr>
+
+<h2> Hoc sinh đủ tuổi vào học lớp 10 không</h2> <br>
+<input type="number" id="tuoi" placeholder=" Nhập tuổi">
+<button onclick="kt2()"> Kiểm tra</button> <br>
+<p id="dutuoi"> </p>
+<hr>
+
+<h2> số nguyên x lớn hay nhỏ hơn 0 </h2> <br>
+<input type="number" id="x" placeholder="Nhập x">
+<button onclick="kt3()"> Kiểm tra</button> <br>
+<p id="lonnho"></p>
+<hr>
+
+<h2> Giá trị lớn nhất của ba số nguyên </h2> <br>
+<input type="number" id="songuyena" placeholder=" Nhập số nguyên a">
+<input type="number" id="songuyenb" placeholder=" Nhập số nguyên b">
+<input type="number" id="songuyenc" placeholder=" Nhập số nguyên c">
+<button onclick="kt4()"> Kiểm tra</button> <br>
+<p id="lonnhat"></p>
+<hr>
+
+<h2> Học lực của học sinh </h2> <br>
+<input type="number" id="diemkiemtra" placeholder="Nhập điểm kiểm tra">
+<input type="number" id="diemgiuaky" placeholder="Nhập điểm thi giữa kỳ">
+<input type="number" id="diemcuoiky" placeholder="Nhập điểm thi cuối kỳ">
+<button onclick="kt5()"> Kiểm tra</button> <br>
+<p id="hocluc"></p>
+
+</body>
+
+<script>
+    function kt1() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        if ( a%b == 0) { document.getElementById("chiahet").innerHTML = 'a chia hết cho b'}
+        else { document.getElementById("chiahet").innerHTML = 'a không chia hết cho b'}
+    }
+    function kt2() {
+        let a = +document.getElementById("tuoi").value;
+        if ( a > 0 && a <= 15) { document.getElementById('dutuoi').innerHTML = 'Chưa đủ tuổi'}
+        if ( a <= 0) { document.getElementById('dutuoi').innerHTML = 'Không có tuổi'}
+        else { document.getElementById('dutuoi').innerHTML = 'Đủ tuổi'}
+    }
+    function kt3() {
+        let a = +document.getElementById('x').value;
+        if ( a > 0 ) { document.getElementById('lonnho').innerHTML = " a là số lớn hơn 0"}
+        if ( a < 0 ) { document.getElementById('lonnho').innerHTML = " a là số nhỏ hơn 0"}
+        if ( a === 0) { document.getElementById('lonnho').innerHTML = " a là 0"}
+    }
+    function kt4() {
+        let a = +document.getElementById('songuyena').value;
+        let b = +document.getElementById('songuyenb').value;
+        let c = +document.getElementById('songuyenc').value;
+        if ( a>=b && a>=c) { document.getElementById('lonnhat').innerHTML = 'Số lớn nhất là: ' + a}
+        if ( b>=a && b>=c) { document.getElementById('lonnhat').innerHTML = 'Số lớn nhất là: ' + b}
+        if ( c>=a && c>=b) { document.getElementById('lonnhat').innerHTML = 'Số lớn nhất là: ' + c}
+    }
+     function kt5() {
+        let a = +document.getElementById('diemkiemtra').value;
+        let b = +document.getElementById('diemgiuaky').value;
+        let c = +document.getElementById('diemcuoiky').value;
+        let v = (a+b+c)/3;
+        if ( v < 4) { document.getElementById('hocluc').innerHTML = ' Học lực yếu'}
+        if ( v >= 4 && v < 6) { document.getElementById('hocluc').innerHTML = ' Học lực trung bình'}
+        if ( v >= 6 && v < 7) { document.getElementById('hocluc').innerHTML = ' Học lực khá'}
+        if ( v >= 7 && v < 9.5) { document.getElementById('hocluc').innerHTML = ' Học lực giỏi'}
+        if ( v >= 9.5 && v <=10) { document.getElementById('hocluc').innerHTML = ' Học lực xuất sắc'}
+        //else { document.getElementById('hocluc').innerHTML = 'Không có điểm này'}
+    }
+</script>
+</html>
