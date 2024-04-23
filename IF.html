@@ -43,8 +43,8 @@
 
 <script>
     function kt1() {
-        let a = document.getElementById("a").value;
-        let b = document.getElementById("b").value;
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
         if ( a%b == 0) { document.getElementById("chiahet").innerHTML = 'a chia hết cho b'}
         else { document.getElementById("chiahet").innerHTML = 'a không chia hết cho b'}
     }
@@ -73,12 +73,12 @@
         let b = +document.getElementById('diemgiuaky').value;
         let c = +document.getElementById('diemcuoiky').value;
         let v = (a+b+c)/3;
-        if ( v < 4) { document.getElementById('hocluc').innerHTML = ' Học lực yếu'}
-        if ( v >= 4 && v < 6) { document.getElementById('hocluc').innerHTML = ' Học lực trung bình'}
-        if ( v >= 6 && v < 7) { document.getElementById('hocluc').innerHTML = ' Học lực khá'}
-        if ( v >= 7 && v < 9.5) { document.getElementById('hocluc').innerHTML = ' Học lực giỏi'}
-        if ( v >= 9.5 && v <=10) { document.getElementById('hocluc').innerHTML = ' Học lực xuất sắc'}
-        //else { document.getElementById('hocluc').innerHTML = 'Không có điểm này'}
+        if ( v >=0 && v < 4) { document.getElementById('hocluc').innerHTML = ' Học lực yếu'}
+        else if ( v >= 4 && v < 6) { document.getElementById('hocluc').innerHTML = ' Học lực trung bình'}
+        else if ( v >= 6 && v < 7) { document.getElementById('hocluc').innerHTML = ' Học lực khá'}
+        else if ( v >= 7 && v < 9.5) { document.getElementById('hocluc').innerHTML = ' Học lực giỏi'}
+        else if ( v >= 9.5 && v <=10) { document.getElementById('hocluc').innerHTML = ' Học lực xuất sắc'}
+        else { document.getElementById('hocluc').innerHTML = 'Không có điểm này'}
     }
 </script>
 </html>
